@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ButtonDemo</string>
+    <string name="clickmetochange">Click Me to Change</string>
+    <string name="ichangeafteronclick">I am Changed After onClick</string>
+    <string name="xml_click">I am change by Xml</string>
+    <string name="xmlbutton">XButtonforxmlClick</string>
+</resources>
