@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CheckBoxDemo</string>
+    <string name="banana">Banana</string>
+    <string name="apple">Apple</string>
+    <string name="plum">Plum</string>
+    <string name="resetapp">Reset App</string>
+
+</resources>
