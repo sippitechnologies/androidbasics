@@ -1,57 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/maincontainer"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/maincontainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
 
     <TextView
-        android:id="@+id/label"
+        android:id="@+id/txt_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        />
+        android:layout_marginTop="16dp"
+        android:text="@string/left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/rg_alignment"
-        android:layout_centerInParent="true"
+        android:id="@+id/rg_direction"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <RadioButton
-            android:id="@+id/rb_center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Center" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/rb_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Top" />
+            android:text="@string/top" />
 
         <RadioButton
             android:id="@+id/rb_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bottom" />
+            android:text="@string/bottom" />
+
+        <RadioButton
+            android:id="@+id/rb_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/center" />
 
         <RadioButton
             android:id="@+id/rb_left"
-            android:checked="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Left" />
+            android:checked="true"
+            android:text="@string/left" />
 
         <RadioButton
             android:id="@+id/rb_right"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Right" />
+            android:text="@string/right" />
     </RadioGroup>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

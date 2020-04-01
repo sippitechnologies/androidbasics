@@ -12,18 +12,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val layoutParams = maincontainer.layoutParams
-
-        rg_alignment.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
-         val direction = when(checkedId)
+        rg_direction.setOnCheckedChangeListener({ radioGroup: RadioGroup, i: Int ->
+            val direction= when(i)
             {
-                R.id.rb_bottom-> "Bottom"
-                R.id.rb_center->"Center"
-                R.id.rb_top-> "Top"
-                R.id.right-> "Right"
-                else-> "Left"
+                R.id.rb_right-> resources.getString(R.string.right)
+                R.id.rb_top-> resources.getString(R.string.top)
+                R.id.rb_bottom-> resources.getString(R.string.bottom)
+                R.id.rb_center-> resources.getString(R.string.center)
+                else -> resources.getString(R.string.left)
             }
-            label.text = direction
+            txt_label.text = direction
 
         })
     }
