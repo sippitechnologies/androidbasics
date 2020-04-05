@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EditTextDemo</string>
+    <string name="reset">Reset</string>
+    <string name="submit">Submit</string>
+    <string name="email_editText">Email Edittext</string>
+    <string name="editphone">EditText Phone</string>
+    <string name="edittextdate">EditText Date</string>
+    <string name="edittextmultiline">EditText Multiline</string>
+</resources>
