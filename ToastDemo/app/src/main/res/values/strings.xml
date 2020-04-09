@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ToastDemo</string>
+    <string name="shortdurationtoast">Toast for Short Duration</string>
+    <string name="toastforlongduration">Toast for Long Duration</string>
 </resources>
