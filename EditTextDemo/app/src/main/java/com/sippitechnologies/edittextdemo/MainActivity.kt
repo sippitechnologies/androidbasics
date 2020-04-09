@@ -2,7 +2,9 @@ package com.sippitechnologies.edittextdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -11,46 +13,60 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button.setOnClickListener{
-            editText.text=null
-            editText2.text=null
-            editText3.text=null
-            editText4.text=null
+        btn_reset.setOnClickListener{
+            editText_email.text=null
+            editText_phone.text=null
+            editText_date.text=null
+            editText_multiline.text=null
         }
-        button2.setOnClickListener{
-            if(!TextUtils.isEmpty(editText.text)&& !TextUtils.isEmpty(editText2.text) && !TextUtils.isEmpty(editText3.text) && !TextUtils.isEmpty(editText4.text))
+        btn_submit.setOnClickListener{
+            if(!TextUtils.isEmpty(editText_email.text) && !TextUtils.isEmpty(editText_phone.text)&& !TextUtils.isEmpty(editText_date.text) &&
+                !TextUtils.isEmpty(editText_multiline.text)
+            )
             {
-                Toast.makeText(MainActivity@this,"Data Submit Successfully",Toast.LENGTH_LONG).show()
-                editText.text=null
-                editText2.text=null
-                editText3.text=null
-                editText4.text=null
+                textView.text = resources.getString(R.string.sucess)
+                editText_email.text=null
+                editText_phone.text=null
+                editText_date.text=null
+                editText_multiline.text=null
             }
             else
             {
-                 if(editText.text.isEmpty())
-                 {
-                     editText.error = "Enter Valid Email"
-                     return@setOnClickListener
-                 }
-                else if(editText2.text.isEmpty())
-                 {
-                     editText2.error = "Enter Valid Phone"
-                     return@setOnClickListener
-                 }
-                else if(editText3.text.isEmpty())
-                 {
-                     editText3.error = "Enter Valid Date"
-                     return@setOnClickListener
-                 }
-                else if(editText4.text.isEmpty())
-                 {
-                     editText4.error = "Enter Mulitline Text"
-                     return@setOnClickListener
-                 }
+                if(TextUtils.isEmpty(editText_email.text)) {
+                    editText_email.error = resources.getString(R.string.error_email)
+                    return@setOnClickListener
+                }
+                else if(TextUtils.isEmpty(editText_phone.text))
+                {
+                    editText_phone.error= resources.getString(R.string.error_phone)
+                    return@setOnClickListener
+                }
+                else if(TextUtils.isEmpty(editText_date.text))
+                {
+                    editText_date.error= resources.getString(R.string.error_date)
+                    return@setOnClickListener
+                }
+                else if(TextUtils.isEmpty(editText_multiline.text))
+                {
+                    editText_multiline.error= resources.getString(R.string.error_description)
+                    return@setOnClickListener
+                }
             }
+
+
         }
+        editText_phone.addTextChangedListener(object:TextWatcher{
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
     }
-
 }
