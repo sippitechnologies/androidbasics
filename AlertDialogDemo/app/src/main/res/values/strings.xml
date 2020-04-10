@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AlertDialogDemo</string>
+    <string name="alertdailogwithonebutton">Alert Dialog With One Button</string>
+    <string name="alertdialogwithtwbutton">AlertDialog with Two Button</string>
+    <string name="alertdailogwitthreebutton">Alert Dialog With Three Button</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="maybe">May Be</string>
+    <string name="submit_msg">Submit Clicked</string>
+    <string name="cancel_msg">Cancel Clicked</string>
+    <string name="maybe_msg">May Be Clicked</string>
+
 </resources>
