@@ -1,30 +1,34 @@
 package com.sippitechnologies.activitydemo
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_second.*
 
-class MainActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity() {
 
-    val TAG="MainActivity"
-      val MSG="Message"
+    val TAG="SecondActivity"
+    val MSG="Message"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_second)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title="About Us"
         Log.d(TAG,"I am in OnCreate")
-        supportActionBar?.title="My App Home"
         intent.extras?.let{
             val msgfromFirstActivity= intent.getStringExtra(MSG)
             Toast.makeText(this,msgfromFirstActivity, Toast.LENGTH_LONG).show()
         }
+        textView_second.setOnClickListener {
+            val message = editText_msg1.text.toString()
 
-        textView_first.setOnClickListener {
-            val message = editText_msg.text.toString()
-
-            val intent = Intent(this,SecondActivity::class.java)
+            val intent = Intent(this,ThirdActivity::class.java)
             intent.putExtra(MSG,message)
             startActivityForResult(intent,100)
         }
@@ -41,6 +45,14 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.d(TAG,"I am in OnStart")
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId==android.R.id.home)
+        {
+            setResult(100,intent.putExtra(MSG,"Result got from Second Activity for Main Activity"))
+            finish()
+        }
+        return true
     }
 
     override fun onRestart() {

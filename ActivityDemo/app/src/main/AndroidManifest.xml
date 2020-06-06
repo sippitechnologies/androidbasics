@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SecondActivity" android:label="Second Activity"></activity>
+        <activity android:name=".ThirdActivity" android:label="Third Activity"></activity>
+        <activity android:name=".MainActivity" android:label="Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
