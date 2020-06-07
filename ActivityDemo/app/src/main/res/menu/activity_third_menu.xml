@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuitem_setting"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/settings"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menuitem_add"
+        android:icon="@drawable/ic_baseline_sentiment_dissatisfied_24"
+        android:title="@string/add"
+        android:visible="true">
+        <menu>
+            <group>
+                <item android:id="@+id/text1" android:title="Text1"></item>
+                <item android:id="@+id/text2" android:title="Text2"></item>
+                <item android:id="@+id/text3" android:title="Text3"></item>
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menuitem_delete"
+        android:checkable="true"
+        android:icon="@drawable/ic_baseline_send_24"
+        android:title="@string/delete" />
+    <item
+        android:id="@+id/menuitem_updte"
+        android:icon="@drawable/ic_baseline_save_24"
+        android:title="@string/update" />
+</menu>

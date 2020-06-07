@@ -3,6 +3,7 @@ package com.sippitechnologies.activitydemo
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -30,13 +31,27 @@ class ThirdActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_third_menu,menu)
+        return true
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId==android.R.id.home)
         {
             setResult(100,intent.putExtra(MSG,"Result got from Third Activity for Second Activity"))
             finish()
         }
+        val msg = when(item.itemId)
+        {
+            R.id.menuitem_add-> "Add is Clicked"
+            R.id.menuitem_updte->"Update is Clicked"
+            R.id.menuitem_delete->"Delete is Clicked"
+            R.id.text1-> "Text One is Clicked"
+            R.id.text2-> "Text Two is Clicked"
+            R.id.text3-> "Text Three is Clicked"
+            else-> "Settings is Clicked"
+        }
+        Toast.makeText(this,msg,Toast.LENGTH_LONG).show()
         return true
     }
     override fun onStart() {

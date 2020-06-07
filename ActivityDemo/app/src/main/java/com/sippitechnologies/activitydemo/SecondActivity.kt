@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -34,6 +35,15 @@ class SecondActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_main_menu,menu)
+        return true
+    }
+
+
+
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode==100)
@@ -51,6 +61,18 @@ class SecondActivity : AppCompatActivity() {
         {
             setResult(100,intent.putExtra(MSG,"Result got from Second Activity for Main Activity"))
             finish()
+        }
+        else
+        {
+            val msg = when(item.itemId)
+            {
+                R.id.menuitem_add-> "Add is Clicked"
+                R.id.menuitem_updte->"Update is Clicked"
+                R.id.menuitem_delete->"Delete is Clicked"
+                else-> "Settings is Clicked"
+            }
+            Toast.makeText(this,msg,Toast.LENGTH_LONG).show()
+
         }
         return true
     }

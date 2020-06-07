@@ -4,7 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.ContextMenu
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.view.menu.MenuBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +33,37 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(MSG,message)
             startActivityForResult(intent,100)
         }
+        registerForContextMenu(textView_first)
+
     }
+
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+      val msg=  when(item.itemId)
+        {
+            R.id.menuitem_add-> "Add Item is Clicked"
+            R.id.menuitem_delete->"Delete Item is Clicked"
+            R.id.menuitem_updte-> "Update Item is Clicked"
+            else-> "Settings is Clicked"
+
+        }
+        Toast.makeText(this,msg,Toast.LENGTH_LONG).show()
+        return true
+    }
+
+
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        menuInflater.inflate(R.menu.activity_main_menu,menu)
+    }
+
+
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
