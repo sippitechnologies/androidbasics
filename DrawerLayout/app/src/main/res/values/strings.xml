@@ -1,0 +1,9 @@
+<resources>
+    <string name="draewer_open">Drawer Open</string>
+    <string name="draewer_close">Drawer Close</string>
+    <string name="app_name">DrawerLayout Demo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Home Fragment</string>
+    <string name="contact">I am Contact Fragment</string>
+    <string name="about">I am about Fragment</string>
+</resources>
