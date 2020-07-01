@@ -6,4 +6,5 @@
     <string name="hello_blank_fragment">Home Fragment</string>
     <string name="contact">I am Contact Fragment</string>
     <string name="about">I am about Fragment</string>
+    <string name="email">testemail@gmail.com</string>
 </resources>
