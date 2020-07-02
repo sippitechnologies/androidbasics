@@ -73,12 +73,25 @@ class FragmentOne: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val person= Person("Test","last","test@gmail.com",20)
+
         button2.setOnClickListener{
-            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.root_container,ThirdFragment())?.addToBackStack("fragmentthird")?.commit()
+            val destinationFragment = ThirdFragment()
+            val bundle = Bundle()
+            bundle.putString("MSG",editText_msg.text.toString())
+            bundle.putParcelable("Person",person)
+            destinationFragment.arguments= bundle
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.root_container,destinationFragment)?.addToBackStack("fragmentthird")?.commit()
 
         }
         button_second.setOnClickListener {
-            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.root_container,SecondFragment())?.addToBackStack("fragmentsecond")?.commit()
+            val destinationFragment = SecondFragment()
+            val bundle = Bundle()
+            bundle.putString("MSG",editText_msg.text.toString())
+            bundle.putParcelable("Person",person)
+            destinationFragment.arguments= bundle
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.root_container,destinationFragment)?.addToBackStack("fragmentsecond")?.commit()
         }
     }
 

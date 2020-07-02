@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     fun setUpActionBarToogle()
     {
         actionBarDrawerToggle= ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.draewer_open,R.string.draewer_close)
-
         actionBarDrawerToggle.syncState()
         drawerlayout.addDrawerListener(actionBarDrawerToggle)
         navigationview_main.setNavigationItemSelectedListener(this)
