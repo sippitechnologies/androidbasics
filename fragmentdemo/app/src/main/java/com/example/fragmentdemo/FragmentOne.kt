@@ -73,7 +73,7 @@ class FragmentOne: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val communicter:ICommunicator =  activity as ICommunicator
         val person= Person("Test","last","test@gmail.com",20)
 
         button2.setOnClickListener{
@@ -93,6 +93,12 @@ class FragmentOne: Fragment() {
             destinationFragment.arguments= bundle
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.root_container,destinationFragment)?.addToBackStack("fragmentsecond")?.commit()
         }
+        button_comm.setOnClickListener {
+            communicter.getMessage("I am from Fragment One")
+            communicter.getPerson(person)
+        }
+
     }
+
 
 }
