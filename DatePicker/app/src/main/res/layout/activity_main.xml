@@ -6,17 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="0dp"
+    <DatePicker
+        android:id="@+id/datepicker"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:padding="10dp"
-        android:min="0"
-        android:max="100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

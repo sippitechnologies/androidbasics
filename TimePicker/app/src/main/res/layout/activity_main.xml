@@ -6,15 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="0dp"
+    <TimePicker
+        android:id="@+id/time"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:padding="10dp"
-        android:min="0"
-        android:max="100"
+        android:timePickerMode="clock"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
