@@ -7,12 +7,12 @@
     tools:context=".MainActivity">
 
     <TimePicker
-        android:id="@+id/time"
-        android:layout_width="match_parent"
+        android:id="@+id/strattime"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:timePickerMode="clock"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:timePickerMode="spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

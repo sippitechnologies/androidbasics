@@ -9,8 +9,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        time.setOnTimeChangedListener { timePicker, i, i2 ->
-            Toast.makeText(this@MainActivity,"Selected Time $i:$i2",Toast.LENGTH_LONG).show()
+        strattime.setOnTimeChangedListener { timePicker, i, i2 ->
+
+            Toast.makeText(this@MainActivity,"$i:$i2",Toast.LENGTH_LONG).show()
         }
+
     }
 }
