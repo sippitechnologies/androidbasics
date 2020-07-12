@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BottomNavigationBar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_desc">I am About fragment</string>
+    <string name="home_desc">I am Home Fragment</string>
 </resources>
