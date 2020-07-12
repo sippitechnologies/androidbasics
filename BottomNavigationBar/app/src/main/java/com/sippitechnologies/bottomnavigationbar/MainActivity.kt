@@ -11,16 +11,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        bottomNavigationView.setOnNavigationItemSelectedListener {
-            when(it.itemId)
+        bottomview.setOnNavigationItemSelectedListener {
+
+        val msg =    when(it.itemId)
             {
-                R.id.about->Toast.makeText(this@MainActivity,"About Selected",Toast.LENGTH_LONG).show()
-                else-> Toast.makeText(this@MainActivity,"Profile  Selected",Toast.LENGTH_LONG).show()
+                R.id.about->"About Selected"
+                    else-> "Home Selected"
             }
+            Toast.makeText(this@MainActivity,msg,Toast.LENGTH_LONG).show()
             true
         }
     }
-
-
 
 }
