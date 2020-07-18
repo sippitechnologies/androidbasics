@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">ChromometerDemo</string>
+    <string name="app_name">ChronometerDemo</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="clear">Clear Format</string>
+    <string name="apply">Apply Format</string>
+
+
 </resources>
