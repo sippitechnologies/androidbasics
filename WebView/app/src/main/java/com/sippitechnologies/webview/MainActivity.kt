@@ -10,24 +10,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val url="https://google.com"
-        setClient(url)
-
-
-
-    }
-
-
-
-    fun setClient(url:String)
-    {
-        val client =  WebViewClient()
-        webview.webViewClient=client
-        webview.loadUrl(url)
-
-
+        val googleLink = "http://google.com/"
+        val client = WebViewClient()
+        webview.webViewClient = client
+        webview.loadUrl(googleLink)
 
     }
-
 }
