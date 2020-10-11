@@ -16,35 +16,33 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val forgroundSpan="Forground Span example with TextView"
-        val backgroundSpan = "Background Span example with TextView"
-        val unerlinetext = "UnderLine text Example with TextView"
-        val resizingText = "I am Bigger, from Another String"
-        val bulletExample = "Fruits:\nApple\nBanana"
-        val styledSpan = "I am Style example"
+        val forgroundSpan="Forground Span example with TextView" //10
+        val backgroundSpan = "Background Span example with TextView"//11
+        val unerlinetext = "UnderLine text Example with TextView"//9
+        val resizingText = "I am Bigger, from Another String"//11
+        val bulletExample = "Fruits:\nApple\nBanana"// Apple 5  Banana 6  fruits-8,
+        val styledSpan = "I am Style example" //10
 
-        val foregroundSpannable= SpannableString(forgroundSpan)
-        foregroundSpannable.setSpan(ForegroundColorSpan(Color.BLUE),0,15,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        txt_forgroundcolor.text=foregroundSpannable
-        val backgroundColorSpan= SpannableString(backgroundSpan)
-        backgroundColorSpan.setSpan(BackgroundColorSpan(Color.RED),0,15,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        txt_backgroundcolor.text = backgroundColorSpan
+        val forgroundSpannableString = SpannableString(forgroundSpan)
+        forgroundSpannableString.setSpan(ForegroundColorSpan(Color.YELLOW),0,10,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        txt_forgroundcolor.text=forgroundSpannableString
 
-        val underlineSpanableString = SpannableString(unerlinetext)
-        underlineSpanableString.setSpan(UnderlineSpan(),0,10,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        txt_underline.text=underlineSpanableString
-
+        val backgroundColorSpan = SpannableString(backgroundSpan)
+        backgroundColorSpan.setSpan(BackgroundColorSpan(Color.YELLOW),0,11,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        txt_backgroundcolor.text=backgroundColorSpan
+        val underlineSpannableString = SpannableString(unerlinetext)
+        underlineSpannableString.setSpan(UnderlineSpan(),0,10,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        txt_underline.text=underlineSpannableString
         val resizeSpannableString = SpannableString(resizingText)
-        resizeSpannableString.setSpan(RelativeSizeSpan(3f),0,12,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        resizeSpannableString.setSpan(RelativeSizeSpan(4f),0,11,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         txt_sizespan.text=resizeSpannableString
+        val styledSpannableString = SpannableString(styledSpan)
+        styledSpannableString .setSpan(StyleSpan(BOLD),0,11,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        txt_stylespan.text=styledSpannableString
         val bulletSpannableString = SpannableString(bulletExample)
-        bulletSpannableString.setSpan(BulletSpan(10, Color.MAGENTA,20),8,14,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        bulletSpannableString.setSpan(BulletSpan(10, Color.MAGENTA,20),14,bulletExample.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        txt_bulletspan.text = bulletSpannableString
-
-        val styleSpannedString = SpannableString(styledSpan)
-        styleSpannedString.setSpan(StyleSpan(BOLD),0,10,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        txt_stylespan.text=styleSpannedString
+        bulletSpannableString.setSpan(BulletSpan(2,Color.MAGENTA,10),8,13,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        bulletSpannableString.setSpan(BulletSpan(2,Color.MAGENTA,10),14,bulletExample.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        txt_bulletspan.text=bulletSpannableString
 
 
 

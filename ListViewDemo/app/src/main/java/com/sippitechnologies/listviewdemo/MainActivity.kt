@@ -38,15 +38,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val spannableString = SpannableString("Good Morning")
-        spannableString.setSpan(ForegroundColorSpan(Color.BLUE),0,spannableString.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        spannableString.setSpan(UnderlineSpan(),0,spannableString.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        spannableString.setSpan(StyleSpan(BOLD),0,spannableString.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        spannableString.setSpan(RelativeSizeSpan(2f),0,spannableString.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        spannableString.setSpan(BulletSpan(10,Color.GREEN),0,spannableString.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        spannableString.setSpan()
-
-
         // Its our data to display in our listView
         val fruitAdapter = ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,Data.fruitnames)
        listview_fruit.adapter = fruitAdapter

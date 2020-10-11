@@ -14,26 +14,28 @@ class MultipySelectionListViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_multi)
         fruitAdapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_multiple_choice,Data.fruitnames)
-        multiselecitonlistview.adapter = fruitAdapter
         multiselecitonlistview.choiceMode = ListView.CHOICE_MODE_MULTIPLE
+        multiselecitonlistview.adapter = fruitAdapter
         btn_multiply_choice.setOnClickListener {
-            Toast.makeText(this,getListofSelectedItem().toString(),Toast.LENGTH_LONG).show()
+            Toast.makeText(this,getListofSelectedItems().toString(),Toast.LENGTH_LONG).show()
         }
 
-
     }
-    fun getListofSelectedItem():List<String>
+    fun getListofSelectedItems():List<String>
     {
-        val checked = multiselecitonlistview.checkedItemPositions
-        val checkitems= mutableListOf<String>()
-        for(i in 0 until checked.size())
+        val listofCheckItems= mutableListOf<String>()
+        val checkedItems = multiselecitonlistview.checkedItemPositions
+        for (i in 0 until checkedItems.size())
         {
-            val position = checked.keyAt(i)
-            if(checked.valueAt(i))
+            val position = checkedItems.keyAt(i)
+            if(checkedItems.valueAt(i))
             {
-                checkitems.add(fruitAdapter.getItem(position)!!)
+                listofCheckItems.add(fruitAdapter.getItem(position)!!)
             }
         }
-        return checkitems
+        return listofCheckItems
+
     }
+
+
 }
