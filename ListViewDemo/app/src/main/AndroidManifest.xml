@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".MultipySelectionListViewActivity">
+        <activity android:name=".CustomListView" />
+        <activity android:name=".MultipySelectionListViewActivity" />
+        <activity
+            android:name=".AddRemoveItemActivity"
+            android:label="Cart">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
