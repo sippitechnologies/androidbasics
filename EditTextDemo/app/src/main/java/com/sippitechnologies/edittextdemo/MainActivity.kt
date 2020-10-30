@@ -10,6 +10,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+
+    val specialCharaters = listOf<CharSequence>("$","%","@","*","^","(","!","`")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -57,6 +59,14 @@ class MainActivity : AppCompatActivity() {
         }
         editText_phone.addTextChangedListener(object:TextWatcher{
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                s?.let {
+                    if("#".contentEquals(it))
+                    {
+                        s = s.toString().replace(s[start],'')
+                        Toast.makeText(this@MainActivity,"Sorry You can't Enter Special Character",Toast.LENGTH_LONG).show()
+                    }
+                }
+
 
             }
 

@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class SplashScreenWithAnimation : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,11 +24,26 @@ class MainActivity : AppCompatActivity() {
         val versionDisplayName = packageInfo.versionName
         setContentView(R.layout.activity_main)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         supportActionBar?.hide()
-        Handler().postDelayed(Runnable {
-            val intent = Intent(this,HomeActivity::class.java)
-            startActivity(intent)
-        },2000)
+        val animationforSplash = AnimationUtils.loadAnimation(this,R.anim.zoom_inout)
+        animationforSplash.setAnimationListener(object :Animation.AnimationListener{
+            override fun onAnimationEnd(p0: Animation?) {
+                val intent = Intent(this@SplashScreenWithAnimation,HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+            override fun onAnimationRepeat(p0: Animation?) {
+
+            }
+
+            override fun onAnimationStart(p0: Animation?) {
+
+            }
+        })
+        imageView.startAnimation(animationforSplash)
+
         txt_version_number.text = "Version ${versionDisplayName}"
 
     }
